@@ -123,31 +123,26 @@ print(*ondupl)
 #       Ejercicio 9
 #========================
 
-def es_primo(num):
-    if num < 2:
-        return False
-    
-    for i in range(2, num):
-        if num % i == 0:
-            return False
-            
-    return True
+entrada = input("Ingrese los números separados por espacio: ")
 
-entrada = input("ingrese los numeros separados por espacio: ")
-
-lista_strings = entrada.split()
 numeros = []
-
-for x in lista_strings:
+for x in entrada.split():
     numeros.append(int(x))
 
 primos = []
 
-for n in numeros:
-    if es_primo(n):
-        primos.append(n)
+for num in numeros:
+    if num >= 2:
+        es_primo = True
+        for i in range(2, num):
+            if num % i == 0:
+                es_primo = False
+                break
+        
+        if es_primo:
+            primos.append(num)
 
-print("Los numeros primos son:")
+print("Los números primos son:")
 print(primos)
 
 
@@ -176,7 +171,7 @@ else:
 
 #lista de numeros
 entrada = input("Por favor, ingrese números separados por espacios: ")
-numeros = [int(n) for n in entrada.splt()]
+numeros = [int(n) for n in entrada.split()]
 
 #pedir el numero a buscar
 objetivo = int(input("Ingrese el número que desea contar: "))
@@ -237,21 +232,20 @@ print(np.max(temperaturas))
 #       Ejercicio 1
 #========================
 
-def crear_matriz(filas, columnas):
-    matriz = []
-    contador = 1
+filas = 3
+columnas = 3
 
-    for i in range(filas):
-        fila = []
-        for i in range(columnas):
-            fila.append(contador)
-            contador += 1
-        matriz.append(fila)
-    return matriz
+matriz = []
+contador = 1
 
-#print final
-mi_matriz = crear_matriz(3, 3)
-print(mi_matriz)
+for i in range(filas):
+    fila = []
+    for j in range(columnas): 
+        fila.append(contador)
+        contador += 1
+    matriz.append(fila)
+
+print(mi_matriz) 
 
 #========================
 #       Ejercicio 2
@@ -424,7 +418,7 @@ for i in range(n):
 if es_simetrica:
     print("La matriz es simétrica")
 else:
-    print("La matriz NO es simétrica")
+    print("La matriz no es simétrica")
 
 #========================
 #       Ejercicio 11
@@ -464,7 +458,7 @@ for fila in matriz_girada:
 #       Ejercicio 12
 #========================
 
-cadena_notas = "45, 88, -5, 92, 30, 110, 75, 60, 15"
+cadena_notas = "45,88,-5,92,30,110,75,60,15"
 
 # 1. Convertir la cadena en lista
 lista_cadenas = cadena_notas.split(",")
@@ -475,7 +469,7 @@ suma_validas = 0
 total_validas = 0
 
 for item in lista_cadenas:
-    nota = int(item.strip())
+    nota = int(item)
     
     if nota < 0 or nota > 100:
         continue
