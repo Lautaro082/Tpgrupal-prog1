@@ -1,3 +1,5 @@
+#Integrantes:Lautaro Nicolas Dominguez, Nahieli Celeste Insfran
+
 # Ejercicio 1: Funciones puras con parámetros opcionales y keyword arguments
 def calcular_factura_final(
     monto_base: float,
