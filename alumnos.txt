@@ -1,0 +1,11 @@
+#Datos de alumnos ----------------------------------------------
+#nombre;apellido;legajo;promedio--------------------------------
+
+Lautaro;Dominguez;89218;8
+Nahieli;Insfran;77232;9
+Lionel;Messi;98341;10
+Tomas;Cusillan;82349;5
+Bautista;Cano;84576;7
+Luna;Cortes;74635;8
+Mateo;Godoy;49837;9
+Tobias;Calderon;33811;10
